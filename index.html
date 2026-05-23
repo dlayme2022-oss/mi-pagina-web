@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EduTech Primaria - Plataforma de capacitación interactiva para docentes del nivel primario en herramientas educativas digitales clave.">
+    <title>EduTech Primaria - Capacitación Docente Interactiva</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Hojas de Estilos -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Fondo decorativo animado en malla -->
+    <div class="mesh-bg"></div>
+
+    <!-- Barra de Navegación Principal -->
+    <header class="main-header" id="main-header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                </svg>
+                <span>EduTech<span class="logo-accent">Primaria</span></span>
+            </a>
+
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="#dashboard" class="nav-link active" data-target="dashboard">Panel</a></li>
+                    <li><a href="#modulos" class="nav-link" data-target="modulos">Módulos</a></li>
+                    <li><a href="#simulador" class="nav-link" data-target="simulador">Simulador</a></li>
+                    <li><a href="#trivia" class="nav-link" data-target="trivia">Evaluación</a></li>
+                    <li><a href="#recursos" class="nav-link" data-target="recursos">Recursos</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <!-- Toggle de Tema Claro/Oscuro -->
+                <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                <!-- Perfil del Docente -->
+                <div class="user-profile" id="user-profile-trigger">
+                    <div class="user-avatar" id="user-avatar-badge">
+                        <span>👩‍🏫</span>
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name" id="profile-name-display">Docente Primaria</span>
+                        <span class="user-role">Maestro(a) del Futuro</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="container main-content">
+
+        <!-- ================= SECTION: DASHBOARD ================= -->
+        <section id="dashboard" class="page-section active">
+            <!-- Héroe de Bienvenida -->
+            <div class="hero-card">
+                <div class="hero-info">
+                    <h1 class="hero-title">¡Bienvenido(a) a tu Aula de Aprendizaje, <span id="hero-teacher-name">Docente</span>!</h1>
+                    <p class="hero-subtitle">Potencia tus clases de primaria con las plataformas educativas más dinámicas del momento. ¡Aprende jugando, diseñando e interactuando!</p>
+                    <div class="hero-actions-row">
+                        <button class="btn btn-primary btn-iconic" onclick="navigateToSection('modulos')">
+                            <span>Comenzar Capacitación</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </button>
+                        <button class="btn btn-secondary" onclick="openConfigModal()">
+                            <span>Personalizar Perfil</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-progress">
+                    <div class="progress-circle-container">
+                        <svg class="progress-ring" width="160" height="160">
+                            <circle class="progress-ring__circle-bg" stroke="rgba(255,255,255,0.15)" stroke-width="12" fill="transparent" r="66" cx="80" cy="80" />
+                            <circle class="progress-ring__circle" id="global-progress-circle" stroke="var(--accent-glow)" stroke-width="12" fill="transparent" r="66" cx="80" cy="80" />
+                        </svg>
+                        <div class="progress-text-overlay">
+                            <span class="progress-percentage" id="global-progress-text">0%</span>
+                            <span class="progress-label">COMPLETADO</span>
+                        </div>
+                    </div>
+                    <div class="progress-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" id="stats-modules-completed">0/4</span>
+                            <span class="stat-label">Módulos listos</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="stats-badge-count">0</span>
+                            <span class="stat-label">Medallas ganadas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección de Logros y Medallas Desbloqueadas -->
+            <div class="badges-showcase">
+                <h3 class="section-subtitle">Tus Medallas de Habilidades</h3>
+                <div class="badges-grid">
+                    <div class="badge-card locked" id="badge-classroom">
+                        <div class="badge-icon">🏫</div>
+                        <div class="badge-title">Líder Google Classroom</div>
+                        <div class="badge-status">Bloqueado</div>
+                    </div>
+                    <div class="badge-card locked" id="badge-kahoot">
+                        <div class="badge-icon">🎮</div>
+                        <div class="badge-title">Experto en Kahoot!</div>
+                        <div class="badge-status">Bloqueado</div>
+                    </div>
+                    <div class="badge-card locked" id="badge-canva">
+                        <div class="badge-icon">🎨</div>
+                        <div class="badge-title">Diseñador Educativo Canva</div>
+                        <div class="badge-status">Bloqueado</div>
+                    </div>
+                    <div class="badge-card locked" id="badge-padlet">
+                        <div class="badge-icon">📌</div>
+                        <div class="badge-title">Facilitador Padlet</div>
+                        <div class="badge-status">Bloqueado</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SECTION: MODULOS ================= -->
+        <section id="modulos" class="page-section">
+            <div class="section-header text-center">
+                <h2 class="section-title">Elige tu Ruta de Aprendizaje</h2>
+                <p class="section-description">Módulos interactivos enfocados en dinámicas específicas para educación primaria. Al completar cada uno, realiza su práctica en el Simulador.</p>
+            </div>
+
+            <!-- Grid de Módulos (Tarjetas) -->
+            <div class="modules-grid">
+                <!-- Tarjeta: Google Classroom -->
+                <div class="module-card card-classroom">
+                    <div class="module-banner">
+                        <div class="module-tag">Gestión y Tareas</div>
+                        <div class="module-logo">🏫</div>
+                    </div>
+                    <div class="module-body">
+                        <h3 class="module-title">Google Classroom</h3>
+                        <p class="module-text">Aprende a estructurar un aula virtual limpia, organizar actividades didácticas por temas y calificar de forma ágil a tus pequeños estudiantes.</p>
+                        <div class="module-meta">
+                            <span class="meta-item">⏱️ 15 Mins</span>
+                            <span class="meta-item">🟢 Básico</span>
+                        </div>
+                        <div class="module-progress-bar">
+                            <div class="module-progress-fill" id="progress-fill-classroom" style="width: 0%"></div>
+                        </div>
+                        <div class="module-actions">
+                            <button class="btn btn-primary btn-full" onclick="startModule('classroom')">Aprender Ahora</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta: Kahoot! -->
+                <div class="module-card card-kahoot">
+                    <div class="module-banner">
+                        <div class="module-tag">Gamificación Activa</div>
+                        <div class="module-logo">🎮</div>
+                    </div>
+                    <div class="module-body">
+                        <h3 class="module-title">Kahoot!</h3>
+                        <p class="module-text">Crea cuestionarios dinámicos e interactivos en minutos. Ideal para evaluar los conocimientos de tus alumnos jugando y con sana competencia.</p>
+                        <div class="module-meta">
+                            <span class="meta-item">⏱️ 20 Mins</span>
+                            <span class="meta-item">🟡 Intermedio</span>
+                        </div>
+                        <div class="module-progress-bar">
+                            <div class="module-progress-fill" id="progress-fill-kahoot" style="width: 0%"></div>
+                        </div>
+                        <div class="module-actions">
+                            <button class="btn btn-primary btn-full" onclick="startModule('kahoot')">Aprender Ahora</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta: Canva -->
+                <div class="module-card card-canva">
+                    <div class="module-banner">
+                        <div class="module-tag">Diseño Visual</div>
+                        <div class="module-logo">🎨</div>
+                    </div>
+                    <div class="module-body">
+                        <h3 class="module-title">Canva para Educación</h3>
+                        <p class="module-text">Diseña fichas pedagógicas, infografías divertidas y portadas para tus proyectos escolares usando plantillas increíbles y fáciles de adaptar.</p>
+                        <div class="module-meta">
+                            <span class="meta-item">⏱️ 25 Mins</span>
+                            <span class="meta-item">🟢 Básico</span>
+                        </div>
+                        <div class="module-progress-bar">
+                            <div class="module-progress-fill" id="progress-fill-canva" style="width: 0%"></div>
+                        </div>
+                        <div class="module-actions">
+                            <button class="btn btn-primary btn-full" onclick="startModule('canva')">Aprender Ahora</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta: Padlet -->
+                <div class="module-card card-padlet">
+                    <div class="module-banner">
+                        <div class="module-tag">Muros Colaborativos</div>
+                        <div class="module-logo">📌</div>
+                    </div>
+                    <div class="module-body">
+                        <h3 class="module-title">Padlet</h3>
+                        <p class="module-text">Diseña pizarras interactivas colaborativas donde tus estudiantes y padres de familia pueden publicar ideas, dibujos y tareas en un solo lugar.</p>
+                        <div class="module-meta">
+                            <span class="meta-item">⏱️ 15 Mins</span>
+                            <span class="meta-item">🟡 Intermedio</span>
+                        </div>
+                        <div class="module-progress-bar">
+                            <div class="module-progress-fill" id="progress-fill-padlet" style="width: 0%"></div>
+                        </div>
+                        <div class="module-actions">
+                            <button class="btn btn-primary btn-full" onclick="startModule('padlet')">Aprender Ahora</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vista del Contenido Teórico-Práctico (Oculto inicialmente, se muestra dinámicamente) -->
+            <div id="module-viewer" class="module-viewer hidden">
+                <div class="viewer-header">
+                    <button class="btn-back" onclick="closeModuleViewer()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20">
+                            <line x1="19" y1="12" x2="5" y2="12"></line>
+                            <polyline points="12 19 5 12 12 5"></polyline>
+                        </svg>
+                        <span>Volver a Módulos</span>
+                    </button>
+                    <h3 class="viewer-title" id="viewer-title">Título del Módulo</h3>
+                </div>
+                <div class="viewer-layout">
+                    <!-- Guía Interactiva Paso a Paso -->
+                    <div class="viewer-content-card" id="viewer-steps-content">
+                        <!-- Se llena dinámicamente con JS -->
+                    </div>
+                    <!-- Sidebar de Recomendación Práctica -->
+                    <div class="viewer-sidebar">
+                        <div class="practice-callout">
+                            <span class="callout-icon">💡</span>
+                            <h4>¿Listo para practicar?</h4>
+                            <p>Hemos preparado una práctica real interactiva en nuestro simulador para que apliques lo aprendido de inmediato.</p>
+                            <button class="btn btn-accent btn-full" id="btn-viewer-practice">Probar en Simulador</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SECTION: SIMULADOR ================= -->
+        <section id="simulador" class="page-section">
+            <div class="section-header text-center">
+                <h2 class="section-title">Centro de Práctica Virtual</h2>
+                <p class="section-description">Aprende haciendo. Selecciona una herramienta para abrir un entorno virtual interactivo simulado y sigue los retos guiados paso a paso.</p>
+            </div>
+
+            <!-- Pestañas del Simulador -->
+            <div class="simulator-tabs">
+                <button class="sim-tab active" data-platform="classroom" onclick="switchSimulatorTab('classroom')">🏫 Google Classroom</button>
+                <button class="sim-tab" data-platform="kahoot" onclick="switchSimulatorTab('kahoot')">🎮 Kahoot!</button>
+                <button class="sim-tab" data-platform="canva" onclick="switchSimulatorTab('canva')">🎨 Canva</button>
+                <button class="sim-tab" data-platform="padlet" onclick="switchSimulatorTab('padlet')">📌 Padlet</button>
+            </div>
+
+            <!-- Contenedor de la Simulación -->
+            <div class="simulator-wrapper">
+                <!-- Panel de Instrucciones del Reto (Izquierda) -->
+                <div class="sim-challenge-panel">
+                    <div class="challenge-header">
+                        <span class="challenge-number" id="challenge-step-count">Reto 1 de 3</span>
+                        <h3 class="challenge-title" id="challenge-task-title">Crea tu primera Clase Virtual</h3>
+                    </div>
+                    <p class="challenge-description" id="challenge-task-desc">
+                        En la ventana interactiva de Google Classroom de la derecha, haz clic en el botón con el icono <strong>"+"</strong> y selecciona la opción <strong>"Crear clase"</strong>.
+                    </p>
+                    <div class="challenge-checklist" id="challenge-checklist">
+                        <!-- Elementos de la lista de tareas del reto -->
+                    </div>
+                    <div class="challenge-status-box" id="challenge-feedback-box">
+                        <span class="status-indicator info">ℹ️ Listo para comenzar</span>
+                        <p class="status-msg">Sigue la instrucción de arriba para avanzar.</p>
+                    </div>
+                </div>
+
+                <!-- Área del Simulador Activo (Derecha) -->
+                <div class="sim-display-panel">
+                    <!-- Barra superior simuladora de Navegador Web -->
+                    <div class="browser-bar">
+                        <div class="browser-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="browser-address-bar" id="simulator-url">
+                            classroom.google.com
+                        </div>
+                    </div>
+
+                    <!-- Pantalla Interactiva donde ocurre la magia -->
+                    <div class="simulation-screen" id="sim-screen">
+                        <!-- Se inyecta dinámicamente por JS según la pestaña activa -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SECTION: TRIVIA (EVALUACION) ================= -->
+        <section id="trivia" class="page-section">
+            <div class="section-header text-center">
+                <h2 class="section-title">Autoevaluación Docente</h2>
+                <p class="section-description">Pon a prueba tu aprendizaje interactivo sobre plataformas de primaria. Si respondes correctamente, ¡desbloquearás tu Diploma Oficial!</p>
+            </div>
+
+            <div class="trivia-container" id="trivia-container">
+                <!-- Estado Inicial / Inicio -->
+                <div class="trivia-card text-center" id="trivia-start-view">
+                    <div class="trivia-badge-icon">🎓</div>
+                    <h2>¿Estás listo(a) para el reto pedagógico?</h2>
+                    <p class="trivia-intro-text">
+                        Esta prueba consta de 5 preguntas clave basadas en la integración didáctica de las plataformas. Necesitas responder correctamente al menos **4 de 5** para aprobar y recibir tu medalla certificada.
+                    </p>
+                    <div class="trivia-stats-row">
+                        <div class="trivia-stat-col">
+                            <strong>5</strong>
+                            <span>Preguntas</span>
+                        </div>
+                        <div class="trivia-stat-col">
+                            <strong>80%</strong>
+                            <span>Para aprobar</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-large btn-center" onclick="startTriviaQuiz()">Iniciar Evaluación</button>
+                </div>
+
+                <!-- Flujo de Preguntas (Oculto inicialmente) -->
+                <div class="trivia-card hidden" id="trivia-question-view">
+                    <div class="trivia-progress-wrapper">
+                        <span class="trivia-progress-text" id="trivia-q-counter">Pregunta 1 de 5</span>
+                        <div class="trivia-progress-bar">
+                            <div class="trivia-progress-fill" id="trivia-progress-fill" style="width: 20%"></div>
+                        </div>
+                    </div>
+                    <h3 class="trivia-question" id="trivia-question-text">¿Cuál es la pregunta?</h3>
+                    <div class="trivia-options-grid" id="trivia-options-container">
+                        <!-- Las opciones se generan aquí -->
+                    </div>
+                    <div class="trivia-feedback hidden" id="trivia-feedback-panel">
+                        <div class="feedback-icon" id="trivia-feedback-icon">✅</div>
+                        <div class="feedback-content">
+                            <h4 id="trivia-feedback-title">¡Excelente!</h4>
+                            <p id="trivia-feedback-msg">Retroalimentación educativa aquí.</p>
+                        </div>
+                        <button class="btn btn-primary" id="trivia-btn-next" onclick="nextTriviaQuestion()">Siguiente Pregunta</button>
+                    </div>
+                </div>
+
+                <!-- Resultado Final (Oculto inicialmente) -->
+                <div class="trivia-card text-center hidden" id="trivia-result-view">
+                    <div class="result-celebration" id="result-icon-state">🏆</div>
+                    <h2 id="result-headline">¡Felicidades, has aprobado!</h2>
+                    <p id="result-score-text">Obtuviste 5 de 5 preguntas correctas.</p>
+                    
+                    <!-- Diploma Interactivo SVG -->
+                    <div class="diploma-container" id="diploma-display">
+                        <!-- Se generará SVG con JS con nombre dinámico -->
+                    </div>
+
+                    <div class="result-actions">
+                        <button class="btn btn-primary" onclick="restartTriviaQuiz()">Intentar de Nuevo</button>
+                        <button class="btn btn-accent" onclick="downloadDiploma()">Descargar Diploma</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SECTION: RECURSOS ================= -->
+        <section id="recursos" class="page-section">
+            <div class="section-header text-center">
+                <h2 class="section-title">Biblioteca de Recursos Docentes</h2>
+                <p class="section-description">Ahorra tiempo de planificación. Explora estas plantillas, dinámicas e ideas ya adaptadas para su uso en aulas de educación primaria.</p>
+            </div>
+
+            <!-- Filtros de Recursos -->
+            <div class="resources-filters">
+                <button class="filter-btn active" data-filter="all">Todos los recursos</button>
+                <button class="filter-btn" data-filter="classroom">Google Classroom</button>
+                <button class="filter-btn" data-filter="kahoot">Kahoot!</button>
+                <button class="filter-btn" data-filter="canva">Canva</button>
+                <button class="filter-btn" data-filter="padlet">Padlet</button>
+            </div>
+
+            <!-- Listado de Recursos -->
+            <div class="resources-grid" id="resources-grid">
+                <!-- Recurso 1: Canva -->
+                <div class="resource-card" data-platform="canva">
+                    <div class="resource-header color-canva-theme">
+                        <span class="resource-badge">Fichas Didácticas</span>
+                        <span class="resource-icon">🎨</span>
+                    </div>
+                    <div class="resource-body">
+                        <h3 class="resource-title">Plantilla de Fichas de Comprensión Lectora</h3>
+                        <p class="resource-description">Diseño colorido con dibujos interactivos de animales. Ideal para primer y segundo grado de primaria.</p>
+                        <a href="https://www.canva.com/templates/" target="_blank" rel="noopener" class="resource-link">
+                            <span>Ver Plantilla</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Recurso 2: Kahoot -->
+                <div class="resource-card" data-platform="kahoot">
+                    <div class="resource-header color-kahoot-theme">
+                        <span class="resource-badge">Matemáticas</span>
+                        <span class="resource-icon">🎮</span>
+                    </div>
+                    <div class="resource-body">
+                        <h3 class="resource-title">Kahoot! - Tablas de Multiplicar del 2 al 9</h3>
+                        <p class="resource-description">Juego interactivo de velocidad mental y cálculo básico ideal para tercero y cuarto grado.</p>
+                        <a href="https://kahoot.com" target="_blank" rel="noopener" class="resource-link">
+                            <span>Jugar Cuestionario</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Recurso 3: Classroom -->
+                <div class="resource-card" data-platform="classroom">
+                    <div class="resource-header color-classroom-theme">
+                        <span class="resource-badge">Organización</span>
+                        <span class="resource-icon">🏫</span>
+                    </div>
+                    <div class="resource-body">
+                        <h3 class="resource-title">Estructura para Aula Virtual Semanal</h3>
+                        <p class="resource-description">Esquema limpio dividido por días (Lunes a Viernes) para evitar saturar de notificaciones a los padres de familia.</p>
+                        <button class="resource-link" onclick="startModule('classroom')">
+                            <span>Ver Guía</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Recurso 4: Padlet -->
+                <div class="resource-card" data-platform="padlet">
+                    <div class="resource-header color-padlet-theme">
+                        <span class="resource-badge">Proyectos</span>
+                        <span class="resource-icon">📌</span>
+                    </div>
+                    <div class="resource-body">
+                        <h3 class="resource-title">Muro: Galería de Arte de la Primavera</h3>
+                        <p class="resource-description">Plantilla de mural virtual para que los estudiantes de primaria suban fotos de sus dibujos y manualidades hechas en casa.</p>
+                        <a href="https://padlet.com" target="_blank" rel="noopener" class="resource-link">
+                            <span>Ver Muro</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Recurso 5: Canva -->
+                <div class="resource-card" data-platform="canva">
+                    <div class="resource-header color-canva-theme">
+                        <span class="resource-badge">Comunicación</span>
+                        <span class="resource-icon">🎨</span>
+                    </div>
+                    <div class="resource-body">
+                        <h3 class="resource-title">Banner Mensual de Google Classroom</h3>
+                        <p class="resource-description">Fondos hermosos temáticos para decorar el encabezado de tus asignaturas según la temporada del año.</p>
+                        <a href="https://www.canva.com/templates/" target="_blank" rel="noopener" class="resource-link">
+                            <span>Ver Diseños</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Recurso 6: Kahoot -->
+                <div class="resource-card" data-platform="kahoot">
+                    <div class="resource-header color-kahoot-theme">
+                        <span class="resource-badge">Dinámica Grupal</span>
+                        <span class="resource-icon">🎮</span>
+                    </div>
+                    <div class="resource-body">
+                        <h3 class="resource-title">Kahoot! de Rompehielos Escolar</h3>
+                        <p class="resource-description">Preguntas divertidas de opción múltiple ideales para iniciar el año escolar o después del periodo vacacional.</p>
+                        <a href="https://kahoot.com" target="_blank" rel="noopener" class="resource-link">
+                            <span>Jugar Kahoot!</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal de Configuración / Personalizar Perfil -->
+    <div class="modal-backdrop hidden" id="config-modal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>Personalizar Perfil del Docente</h3>
+                <button class="btn-close-modal" onclick="closeConfigModal()" aria-label="Cerrar modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="profile-form" onsubmit="saveProfileChanges(event)">
+                    <div class="form-group">
+                        <label for="teacher-name-input">Nombre del Docente:</label>
+                        <input type="text" id="teacher-name-input" placeholder="Ej. Prof. María Gómez" required autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="teacher-emoji-input">Elegir Avatar:</label>
+                        <select id="teacher-emoji-input">
+                            <option value="👩‍🏫">👩‍🏫 Profesora</option>
+                            <option value="👨‍🏫">👨‍🏫 Profesor</option>
+                            <option value="🧑‍🏫">🧑‍🏫 Docente</option>
+                            <option value="⭐">⭐ Educador Estrella</option>
+                            <option value="🚀">🚀 Maestro Innovador</option>
+                        </select>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="closeConfigModal()">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie de Página -->
+    <footer class="main-footer">
+        <div class="container footer-content text-center">
+            <p>&copy; 2026 EduTech Primaria. Diseñado con amor y dedicación para inspirar a los maestros de hoy.</p>
+            <p class="footer-meta">Desarrollado con HTML5, CSS3 Nativo y JavaScript Moderno.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts de Lógica -->
+    <script src="app.js"></script>
+</body>
+</html>
