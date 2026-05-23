@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EducatIC Primaria - Capacitación Digital para Docentes</title>
+  <meta name="description" content="Aprende a usar Google Classroom, Canva, Kahoot y Padlet. Diseñado especialmente para docentes de nivel primario con guías paso a paso e ideas pedagógicas.">
+  
+  <!-- Favicon / Estilos -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==========================================
+       CABECERA Y NAVEGACIÓN
+       ========================================== -->
+  <header class="header" id="header">
+    <div class="container nav-wrapper">
+      <a href="#" class="logo" id="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32">
+          <path d="M12 2L1 9l11 7 9-5.73V17h2V9L12 2z"/>
+          <path d="M4.18 12.22l8 5.09a2 2 0 0 0 2.12 0l7.52-4.79a13 13 0 0 1-17.64-.3z"/>
+        </svg>
+        <span>Educat<span class="gradient-text">IC</span></span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#inicio" class="nav-link active">Inicio</a>
+        <a href="#plataformas" class="nav-link">Plataformas</a>
+        <a href="#autoevaluacion" class="nav-link">Cuestionario</a>
+        <a href="#recursos" class="nav-link">Recursos</a>
+        <a href="#consejos" class="nav-link">Consejos</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar Tema">
+          <!-- Sun Icon -->
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <!-- Moon Icon -->
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir Menú">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       SECCIÓN HERO (BIENVENIDA)
+       ========================================== -->
+  <section class="hero section" id="inicio">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="badge-tag">
+          <span></span>Capacitación Docente Primaria
+        </div>
+        <h1 class="hero-title">Transforma tus Clases con <span class="gradient-text">Herramientas Digitales</span></h1>
+        <p class="hero-subtitle">Un portal interactivo creado por y para docentes de primaria. Domina las mejores plataformas educativas paso a paso, aplica ideas pedagógicas directas y obtén tu certificado.</p>
+        
+        <div class="hero-buttons">
+          <a href="#plataformas" class="btn btn-primary">Comenzar a Aprender</a>
+          <a href="#autoevaluacion" class="btn btn-secondary">Cuestionario & Diploma</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <h4>4</h4>
+            <p>Plataformas Clave</p>
+          </div>
+          <div class="stat-item">
+            <h4>100%</h4>
+            <p>Interactiva</p>
+          </div>
+          <div class="stat-item">
+            <h4>Imprimible</h4>
+            <p>Certificación</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="floating-bg"></div>
+        <div class="hero-scene">
+          <!-- SVG Illustration -->
+          <svg class="teacher-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:var(--primary);stop-opacity:1" />
+                <stop offset="100%" style="stop-color:var(--secondary);stop-opacity:1" />
+              </linearGradient>
+            </defs>
+            <!-- Background circles decoration -->
+            <circle cx="250" cy="250" r="180" fill="url(#grad1)" opacity="0.1" />
+            <circle cx="250" cy="250" r="130" fill="url(#grad1)" opacity="0.15" />
+            
+            <!-- Character Concept simplified/elegant representation -->
+            <rect x="180" y="320" width="140" height="120" rx="20" fill="var(--bg-card)" stroke="var(--border-color)" stroke-width="4" />
+            <rect x="200" y="340" width="100" height="70" rx="10" fill="var(--primary-light)" />
+            <circle cx="250" cy="200" r="60" fill="var(--primary)" opacity="0.9" />
+            <circle cx="250" cy="190" r="45" fill="#fff" opacity="0.8" />
+            <path d="M190 280 L310 280" stroke="var(--accent)" stroke-width="8" stroke-linecap="round" />
+            
+            <!-- Dynamic elements decoration -->
+            <polygon points="120,180 140,220 100,220" fill="var(--secondary)" />
+            <rect x="360" y="160" width="30" height="30" rx="5" fill="var(--accent)" transform="rotate(45 375 175)" />
+            <circle cx="340" cy="280" r="15" fill="var(--primary)" />
+            <circle cx="150" cy="300" r="20" fill="var(--secondary)" />
+          </svg>
+          
+          <!-- Floating cards -->
+          <div class="float-card fc-1">
+            <div class="float-icon">✏️</div>
+            <div class="float-text">
+              <h5>Canva</h5>
+              <p>Fichas Didácticas</p>
+            </div>
+          </div>
+          
+          <div class="float-card fc-2">
+            <div class="float-icon">🏆</div>
+            <div class="float-text">
+              <h5>Kahoot!</h5>
+              <p>Juegos de Repaso</p>
+            </div>
+          </div>
+          
+          <div class="float-card fc-3">
+            <div class="float-icon">💻</div>
+            <div class="float-text">
+              <h5>Google Classroom</h5>
+              <p>Organiza Tareas</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECCIÓN PLATAFORMAS (CATÁLOGO INTERACTIVO)
+       ========================================== -->
+  <section class="section" id="plataformas">
+    <div class="container">
+      <div class="section-header">
+        <h2>Herramientas Tecnológicas</h2>
+        <p>Selecciona una plataforma para acceder a la guía interactiva paso a paso y descubrir cómo implementarla hoy mismo en tus clases de primaria.</p>
+      </div>
+
+      <div class="platforms-grid">
+        <!-- Google Classroom -->
+        <article class="card platform-card" style="--card-color: #0f9d58; --card-bg-light: rgba(15, 157, 88, 0.1);" data-platform="classroom">
+          <div class="platform-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14.5a1.5 1.5 0 1 1-1.5-1.5 1.5 1.5 0 0 1 1.5 1.5zm.5-5.5a1.5 1.5 0 0 1-1.5 1.5h-1a1 1 0 0 1 0-2h1A1.5 1.5 0 0 1 13.5 11z"/>
+            </svg>
+          </div>
+          <span class="platform-badge">Básico • Gestión</span>
+          <h3>Google Classroom</h3>
+          <p>Tu aula virtual organizada. Crea tareas, comparte materiales y mantén comunicación directa con las familias e infantes de forma segura.</p>
+          <div class="platform-features">
+            <div class="platform-feature-item">
+              <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+              Envío Seguro de Tareas
+            </div>
+            <div class="platform-feature-item">
+              <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+              Agenda y Calendario Integrados
+            </div>
+          </div>
+          <button class="btn btn-outline learn-more-btn" data-platform="classroom">Aprender Ahora</button>
+        </article>
+
+        <!-- Canva -->
+        <article class="card platform-card" style="--card-color: #00c4cc; --card-bg-light: rgba(0, 196, 204, 0.1);" data-platform="canva">
+          <div class="platform-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M12 2c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10-4.48-10-10-10zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+            </svg>
+          </div>
+          <span class="platform-badge">Intermedio • Diseño</span>
+          <h3>Canva para Educación</h3>
+          <p>Diseña material interactivo de impacto. Fichas de trabajo, infografías, presentaciones animadas y actividades visuales que captarán su atención.</p>
+          <div class="platform-features">
+            <div class="platform-feature-item">
+              <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+              Miles de Plantillas Gratuitas
+            </div>
+            <div class="platform-feature-item">
+              <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+              Exporta PDFs Listos para Imprimir
+            </div>
+          </div>
+          <button class="btn btn-outline learn-more-btn" data-platform="canva">Aprender Ahora</button>
+        </article>
+
+        <!-- Kahoot! -->
+        <article class="card platform-card" style="--card-color: #46178f; --card-bg-light: rgba(70, 23, 143, 0.1);" data-platform="kahoot">
+          <div class="platform-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2zm0-4h-2V7h2z"/>
+            </svg>
+          </div>
+          <span class="platform-badge">Fácil • Gamificación</span>
+          <h3>Kahoot!</h3>
+          <p>El juego en el aula. Diseña cuestionarios interactivos divertidos para evaluar saberes previos y repasar temas de manera emocionante.</p>
+          <div class="platform-features">
+            <div class="platform-feature-item">
+              <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+              Dinámicas Grupales Divertidas
+            </div>
+            <div class="platform-feature-item">
+              <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+              Reportes de Aprendizaje Clave
+            </div>
+          </div>
+          <button class="btn btn-outline learn-more-btn" data-platform="kahoot">Aprender Ahora</button>
+        </article>
+
+        <!-- Padlet -->
+        <article class="card platform-card" style="--card-color: #ff5e5b; --card-bg-light: rgba(255, 94, 91, 0.1);" data-platform="padlet">
+          <div class="platform-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M4 6H2v14a2 2 0 0 0 2 2h14v-2H4zm16-4H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm-1 9H9V9h10zm0-4H9V5h10z"/>
+            </svg>
+          </div>
+          <span class="platform-badge">Fácil • Colaboración</span>
+          <h3>Padlet</h3>
+          <p>Muros y pizarras interactivas. Crea un espacio colaborativo donde los alumnos suban dibujos, notas, fotos de proyectos y organicen ideas en grupo.</p>
+          <div class="platform-features">
+            <div class="platform-feature-item">
+              <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+              Multimedia Integrada (Voz, Fotos)
+            </div>
+            <div class="platform-feature-item">
+              <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+              Muros Moderados Seguros
+            </div>
+          </div>
+          <button class="btn btn-outline learn-more-btn" data-platform="padlet">Aprender Ahora</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       VENTANA MODAL DE DETALLE (GUÍA Y TUTORIAL)
+       ========================================== -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal-content" id="modal-content">
+      <button class="modal-close" id="modal-close" aria-label="Cerrar Guía">&times;</button>
+      
+      <div class="modal-hero" id="modal-hero">
+        <div class="modal-hero-title-wrapper">
+          <div class="modal-hero-icon" id="modal-hero-icon">
+            <!-- Icono SVG cargado dinámicamente -->
+          </div>
+          <div class="modal-hero-text">
+            <span class="platform-badge" style="background: rgba(255,255,255,0.25); color: #fff;" id="modal-hero-badge">Cargando...</span>
+            <h2 id="modal-hero-title">Nombre de la Plataforma</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-tabs">
+          <button class="modal-tab-btn active" data-tab="tab-tutorial">Paso a Paso</button>
+          <button class="modal-tab-btn" data-tab="tab-pedagogia">Ideas Pedagógicas</button>
+          <button class="modal-tab-btn" data-tab="tab-recursos">Enlaces Útiles</button>
+        </div>
+
+        <!-- Pestaña 1: Tutorial Paso a Paso -->
+        <div class="modal-pane active" id="tab-tutorial">
+          <div class="tutorial-steps" id="tutorial-steps-container">
+            <!-- Pasos inyectados por JavaScript -->
+          </div>
+        </div>
+
+        <!-- Pestaña 2: Ideas Pedagógicas -->
+        <div class="modal-pane" id="tab-pedagogia">
+          <div class="ideas-grid" id="ideas-container">
+            <!-- Ideas inyectadas por JavaScript -->
+          </div>
+        </div>
+
+        <!-- Pestaña 3: Enlaces Útiles -->
+        <div class="modal-pane" id="tab-recursos">
+          <div class="links-list" id="links-container">
+            <!-- Enlaces inyectados por JavaScript -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       SECCIÓN AUTOEVALUACIÓN (QUIZ & CERTIFICADO)
+       ========================================== -->
+  <section class="section quiz-section" id="autoevaluacion">
+    <div class="container quiz-container">
+      <div class="section-header">
+        <h2>Autoevaluación Docente</h2>
+        <p>Demuestra tu destreza digital y obtén un diploma que avala tus competencias básicas en TIC educativas aplicadas a la primaria.</p>
+      </div>
+
+      <div class="card quiz-card" id="quiz-main-card">
+        <!-- Vista 1: Entrada y Datos -->
+        <div class="quiz-pane active" id="quiz-view-intro">
+          <div class="quiz-intro">
+            <div class="quiz-intro-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 22c5.52 0 10-4.48 10-10S17.52 2 12 2 2 6.48 2 12s4.48 10 10 10zm1-15h-2v6h2V7zm0 8h-2v2h2v-2z"/>
+              </svg>
+            </div>
+            <h3>¿Listo para validar tu aprendizaje?</h3>
+            <p>El cuestionario consta de 5 casos prácticos enfocados en resolver problemas comunes en el aula de primaria usando las herramientas que acabas de explorar.</p>
+            
+            <div class="quiz-name-form">
+              <div class="input-group">
+                <input type="text" id="teacher-name-input" class="input-field" placeholder="Ingresa tu nombre completo" aria-label="Nombre Completo">
+              </div>
+              <button class="btn btn-primary" id="start-quiz-btn">Comenzar Evaluación</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vista 2: Preguntas del Quiz -->
+        <div class="quiz-pane" id="quiz-view-questions">
+          <div class="quiz-progress-bar-wrapper">
+            <div class="quiz-progress-bar-bg">
+              <div class="quiz-progress-bar-fill" id="quiz-progress-bar"></div>
+            </div>
+            <span class="quiz-progress-text" id="quiz-progress-text">Pregunta 1 de 5</span>
+          </div>
+
+          <div class="quiz-question-container">
+            <h4 class="quiz-question-number" id="question-number-header">Caso Práctico 1</h4>
+            <h3 class="quiz-question-text" id="question-text">Texto de la pregunta...</h3>
+            
+            <div class="quiz-options" id="quiz-options-container">
+              <!-- Opciones de respuesta cargadas dinámicamente -->
+            </div>
+
+            <!-- Caja de Explicación (Feedback) -->
+            <div class="quiz-explanation" id="quiz-feedback-box" style="display: none;">
+              <h5 id="quiz-feedback-title">¡Correcto!</h5>
+              <p id="quiz-feedback-text">Texto explicativo de la respuesta...</p>
+            </div>
+
+            <button class="btn btn-primary" id="next-question-btn" style="display: none; margin-left: auto;">Siguiente Pregunta &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Vista 3: Resultados y Certificado -->
+        <div class="quiz-pane" id="quiz-view-results">
+          <div class="quiz-results">
+            <div class="quiz-results-score" id="results-score-display">5 / 5</div>
+            <h3 class="quiz-results-title" id="results-title-display">¡Felicidades, eres un Docente Digital Innovador!</h3>
+            <p class="quiz-results-text">Has completado con éxito la autoevaluación pedagógica. A continuación puedes ver y descargar tu diploma acreditativo.</p>
+            
+            <!-- Estructura del Certificado Impresionable -->
+            <div class="certificate-wrapper" id="certificate-print-area">
+              <div class="certificate-border-outer">
+                <div class="certificate-watermark">EducatIC</div>
+                <div class="certificate-content">
+                  <div class="certificate-header-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <path d="M12 2L1 9l11 7 9-5.73V17h2V9L12 2z"/>
+                      <path d="M4.18 12.22l8 5.09a2 2 0 0 0 2.12 0l7.52-4.79a13 13 0 0 1-17.64-.3z"/>
+                    </svg>
+                    <span>EducatIC</span>
+                  </div>
+                  <h3 class="certificate-title">Diploma de Logro</h3>
+                  <h4 class="certificate-subtitle">Uso Pedagógico de Plataformas Digitales</h4>
+                  <p class="certificate-text-to">Se otorga con orgullo a:</p>
+                  <h2 class="certificate-name" id="certificate-teacher-name">Nombre del Docente</h2>
+                  <p class="certificate-description">Por haber completado con éxito la capacitación y autoevaluación teórica-práctica de integración pedagógica de las herramientas Google Classroom, Canva, Kahoot! y Padlet en el nivel primario.</p>
+                  
+                  <div class="certificate-footer-info">
+                    <div class="cert-date" id="certificate-date">Fecha: 23 de mayo de 2026</div>
+                    <div class="cert-sig">
+                      <div class="cert-sig-line">Comité Evaluador EducatIC</div>
+                    </div>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; margin-top: 20px; border-top: 1px dashed var(--border-color); padding-top: 10px;">
+                    <span class="cert-code" id="certificate-code">ID: ED-892348-26</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: center; gap: 16px; margin-top: 30px;">
+              <button class="btn btn-primary" id="print-certificate-btn">🖨️ Imprimir / Guardar PDF</button>
+              <button class="btn btn-secondary" id="restart-quiz-btn">Recommenzar Quiz</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECCIÓN BANCO DE RECURSOS DESCARGABLES
+       ========================================== -->
+  <section class="section" id="recursos">
+    <div class="container">
+      <div class="section-header">
+        <h2>Banco de Plantillas y Recursos</h2>
+        <p>Acelera tu trabajo diario con recursos listos para copiar, editar y utilizar en tu aula de primaria creados por especialistas.</p>
+      </div>
+
+      <div class="resources-grid">
+        <!-- Canva template -->
+        <article class="card resource-card">
+          <div class="resource-tag tag-canva">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+            Plantillas Canva Editables
+          </div>
+          <h3>Fichas de Lectocomprensión</h3>
+          <p>Un pack de 10 plantillas de Canva para que crees hermosas fichas de comprensión lectora con personajes coloridos e ilustraciones ideales para niños de 1ro a 3er grado.</p>
+          <a href="https://canva.com" target="_blank" rel="noopener noreferrer" class="resource-footer-link">
+            Obtener Plantilla en Canva
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21 12l-8.15-8.15-1.42 1.42L16.86 11H5v2z"/></svg>
+          </a>
+        </article>
+
+        <!-- Kahoot Template -->
+        <article class="card resource-card">
+          <div class="resource-tag tag-quiz">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+            Cuestionarios Listos
+          </div>
+          <h3>Kahoot de Operaciones Básicas</h3>
+          <p>Enlace a cuestionario público interactivo para repasar sumas, restas y problemas lúdicos interactivos diseñados especialmente para niños de 4to a 6to grado.</p>
+          <a href="https://kahoot.com" target="_blank" rel="noopener noreferrer" class="resource-footer-link">
+            Jugar en Kahoot!
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21 12l-8.15-8.15-1.42 1.42L16.86 11H5v2z"/></svg>
+          </a>
+        </article>
+
+        <!-- Projects Padlet Template -->
+        <article class="card resource-card">
+          <div class="resource-tag tag-colab">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+            Estructuras Colaborativas
+          </div>
+          <h3>Muro Colaborativo "Bitácora del Planeta"</h3>
+          <p>Estructura pre-diseñada en Padlet para un proyecto transversal de Ciencias Naturales sobre reciclaje y medio ambiente para que tus alumnos organicen ideas juntos.</p>
+          <a href="https://padlet.com" target="_blank" rel="noopener noreferrer" class="resource-footer-link">
+            Ver Estructura Padlet
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21 12l-8.15-8.15-1.42 1.42L16.86 11H5v2z"/></svg>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECCIÓN CONSEJOS TIC (PRIMARY KIDS PEDAGOGY)
+       ========================================== -->
+  <section class="section tips-section" id="consejos">
+    <div class="container tips-grid">
+      <div class="tips-content">
+        <div class="badge-tag" style="--primary: var(--secondary); --primary-light: var(--secondary-light);">
+          <span></span>Metodologías Activas
+        </div>
+        <h2 style="font-size: 2.5rem; margin-bottom: 24px;">Consejos Pedagógicos para Primaria</h2>
+        <p style="font-size: 1.1rem; margin-bottom: 40px;">El uso de la tecnología debe estar guiado por un propósito educativo sólido. A continuación te presentamos algunas recomendaciones prácticas para asegurar que las TIC beneficien verdaderamente a tus alumnos.</p>
+
+        <div class="tips-cards-container">
+          <!-- Tip 1 -->
+          <div class="tip-item-card">
+            <div class="tip-icon-container">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+              </svg>
+            </div>
+            <div class="tip-text">
+              <h4>Accesibilidad y Visuales Claros</h4>
+              <p>Utiliza tipografías grandes (mínimo 16px) y colores contrastantes. Los niños de primaria dependen fuertemente del soporte visual para asimilar conceptos.</p>
+            </div>
+          </div>
+
+          <!-- Tip 2 -->
+          <div class="tip-item-card">
+            <div class="tip-icon-container">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M19.36 10.04L20.5 9l-9-9-9 9 1.14 1.04L11 2.82V20h2V2.82l6.36 7.22z"/>
+              </svg>
+            </div>
+            <div class="tip-text">
+              <h4>Sesiones Cortas y Dinámicas</h4>
+              <p>Evita exposiciones teóricas largas frente a la pantalla. Procura dividir tus clases digitales en ciclos de 15 minutos que involucren una acción interactiva o física por parte de tus alumnos.</p>
+            </div>
+          </div>
+
+          <!-- Tip 3 -->
+          <div class="tip-item-card">
+            <div class="tip-icon-container">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/>
+              </svg>
+            </div>
+            <div class="tip-text">
+              <h4>Moderación y Ciudadanía Digital</h4>
+              <p>Cuando utilices herramientas abiertas como Padlet, asegúrate de activar la moderación previa de contenidos. Enseña activamente a tus estudiantes a comunicarse con respeto y empatía en internet.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tips-graphic">
+        <svg class="tips-image" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 380px; height: auto;">
+          <defs>
+            <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:var(--secondary);stop-opacity:1" />
+              <stop offset="100%" style="stop-color:var(--accent);stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <circle cx="200" cy="200" r="150" fill="url(#grad2)" opacity="0.1" />
+          <rect x="100" y="100" width="200" height="200" rx="40" fill="var(--bg-card)" stroke="var(--border-color)" stroke-width="4" />
+          <circle cx="200" cy="200" r="60" fill="var(--secondary)" opacity="0.15" />
+          
+          <!-- Abstract representation of positive education concept -->
+          <circle cx="200" cy="180" r="30" fill="var(--secondary)" />
+          <path d="M150 250 Q200 210 250 250" fill="none" stroke="var(--secondary)" stroke-width="8" stroke-linecap="round" />
+          <circle cx="150" cy="140" r="10" fill="var(--accent)" />
+          <circle cx="250" cy="140" r="10" fill="var(--primary)" />
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       PIE DE PÁGINA (FOOTER)
+       ========================================== -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-column footer-info-column">
+        <a href="#" class="logo" style="margin-bottom: 20px;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28">
+            <path d="M12 2L1 9l11 7 9-5.73V17h2V9L12 2z" fill="var(--primary)" />
+          </svg>
+          <span>Educat<span class="gradient-text">IC</span></span>
+        </a>
+        <p>Una plataforma educativa diseñada para empoderar a los docentes de educación primaria mediante la tecnología aplicada al aula.</p>
+      </div>
+
+      <div class="footer-column">
+        <h4>Plataformas</h4>
+        <div class="footer-links">
+          <a href="#plataformas" class="modal-trigger-classroom">Google Classroom</a>
+          <a href="#plataformas" class="modal-trigger-canva">Canva para Educación</a>
+          <a href="#plataformas" class="modal-trigger-kahoot">Kahoot!</a>
+          <a href="#plataformas" class="modal-trigger-padlet">Padlet</a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h4>Navegación</h4>
+        <div class="footer-links">
+          <a href="#inicio">Inicio</a>
+          <a href="#plataformas">Plataformas</a>
+          <a href="#autoevaluacion">Autoevaluación</a>
+          <a href="#recursos">Recursos</a>
+          <a href="#consejos">Consejos</a>
+        </div>
+      </div>
+
+      <div class="footer-column footer-newsletter">
+        <h4>Boletín Semanal</h4>
+        <p>Recibe nuevas plantillas editables e ideas pedagógicas para tus clases en tu correo.</p>
+        <form class="newsletter-form" id="newsletter-form">
+          <input type="email" class="input-field" placeholder="Tu correo electrónico" required aria-label="Correo Electrónico">
+          <button type="submit" class="btn btn-primary" style="padding: 12px 20px;">✓</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 EducatIC Primaria. Desarrollado con fines educativos y de capacitación digital docente.</p>
+      <div class="social-links">
+        <a href="#" class="btn-icon" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.85z"/></svg>
+        </a>
+        <a href="#" class="btn-icon" aria-label="Twitter">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.7 0-1.37-.2-1.95-.54v.05c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.52 8.52 0 0 1-5.31 1.83A8.4 8.4 0 0 1 1 18.75 12.13 12.13 0 0 0 6.56 20c7.88 0 12.21-6.53 12.21-12.21 0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/></svg>
+        </a>
+        <a href="#" class="btn-icon" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.871.508 9.388.508 9.388.508s7.517 0 9.388-.508a3.002 3.002 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lógica Javascript -->
+  <script src="app.js"></script>
+</body>
+</html>
